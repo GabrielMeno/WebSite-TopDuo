@@ -602,7 +602,8 @@
                             <div className="flex flex-col lg:flex-row items-start gap-12">
                                 
                                 {/* COLUNA ESQUERDA - MENU E LOGO */}
-                                <div className="lg:w-3/12 space-y-8 sticky top-24 w-full flex flex-col self-start lg:-mt-10"> 
+                                {/* ALTERAÇÃO AQUI: Adicionado lg: antes de sticky e top-24 para ativar apenas em desktop */}
+                                <div className="lg:w-3/12 space-y-8 lg:sticky lg:top-24 w-full flex flex-col self-start lg:-mt-10 relative"> 
                                     <div className="bg-slate-50 dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
                                         <div className="mb-8 flex justify-center">
                                             <img 
