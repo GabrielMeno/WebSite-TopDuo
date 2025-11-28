@@ -6,8 +6,8 @@
     <title>Top Duo Informática | Sua Solução em Tecnologia</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Top Duo Informática em Quilombo-SC. Revenda Autorizada Zucchetti. Especialistas em Automação Comercial, Assistência Técnica, Redes e Segurança de Dados.">
-    <meta name="keywords" content="Top Duo, Informática, Quilombo, Automação Comercial, Zucchetti, Clipp Store, Assistência Técnica, Manutenção, Antivírus">
+    <meta name="description" content="Top Duo Informática em Quilombo-SC. Revenda Autorizada Zucchetti. Especialistas em Automação Comercial, Assistência Técnica, Redes e Segurança de Dados, Top Duo Informática, Top Duo Informática LTDA, Top Duo, Informática, Sistemas, Clipp, Clipp Pro, Informática Quilombo, Quilombo, Quilombo - SC, Info, QBO, SC, Santa Catarina, Tecnologia, informatica.">
+    <meta name="keywords" content="Top Duo, Informática, Quilombo, Automação Comercial, Zucchetti, Clipp Store, Assistência Técnica, Manutenção, Antivírus, Top Duo Informática, Top Duo Informática LTDA, Top Duo, Informática, Sistemas, Clipp, Clipp Pro, Informática Quilombo, Quilombo, Quilombo - SC, Info, QBO, SC, Santa Catarina, Tecnologia">
     <meta name="author" content="Top Duo Informática">
     <meta property="og:title" content="Top Duo Informática - Sua solução em Tecnologia">
     <meta property="og:image" content="https://i.ibb.co/nMpQGW1f/Untitled-1.png">
@@ -543,7 +543,7 @@
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">Mais que Tecnologia, <br/><span className="text-sky-600 dark:text-sky-500">Parceria de Verdade.</span></h2>
                             <p className="text-slate-600 dark:text-slate-400 mb-12 leading-relaxed text-lg max-w-2xl mx-auto">A Top Duo Informática não é apenas uma loja de informática. Somos um <strong>centro</strong> de soluções tecnológicas consolidado em Quilombo-SC, dedicados a simplificar a gestão do seu negócio e proteger o que é importante para você.</p>
                             <div className="grid md:grid-cols-2 gap-6 text-left">
-                                {[{ text: "Revenda Autorizada Zucchetti", icon: "Check" }, { text: "Laboratório Técnico Especializado", icon: "Wrench" }, { text: "Atendimento Ágil e Transparente", icon: "Clock" }, { text: "Soluções Completas em Segurança", icon: "ShieldCheck" }].map((item, i) => (<div key={i} className="flex items-center gap-4 p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-sky-500/30 transition-all group cursor-default"><div className="w-12 h-12 rounded-full bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center text-sky-600 dark:text-sky-400 group-hover:bg-sky-600 group-hover:text-white transition-colors shrink-0"><Icon name={item.icon === 'Clock' ? 'Clock' : item.icon} size={24} /></div><span className="font-semibold text-lg text-slate-700 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">{item.text}</span></div>))}
+                                {[{ text: "Revenda Autorizada Zucchetti", icon: "Check" }, { text: "Profissionais Técnicos Especializados", icon: "Wrench" }, { text: "Atendimento Ágil e Transparente", icon: "Clock" }, { text: "Soluções Completas em Segurança", icon: "ShieldCheck" }].map((item, i) => (<div key={i} className="flex items-center gap-4 p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-sky-500/30 transition-all group cursor-default"><div className="w-12 h-12 rounded-full bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center text-sky-600 dark:text-sky-400 group-hover:bg-sky-600 group-hover:text-white transition-colors shrink-0"><Icon name={item.icon === 'Clock' ? 'Clock' : item.icon} size={24} /></div><span className="font-semibold text-lg text-slate-700 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">{item.text}</span></div>))}
                             </div>
                         </div>
                     </RevealOnScroll>
@@ -1056,7 +1056,8 @@
                 </section>
             );
         };
-
+        
+        // --- GALLERY SECTION (RE-ADDED) ---
         const Gallery = () => (
             <section className="py-24 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 overflow-hidden">
                 <div className="container mx-auto px-6">
@@ -1068,6 +1069,7 @@
             </section>
         );
 
+        // --- CONTACT SECTION (RE-ADDED & UPDATED) ---
         const Contact = () => {
             const { addToast } = useToast();
             const [formStatus, setFormStatus] = useState('idle');
@@ -1109,8 +1111,8 @@
                 <section id="contato" className="py-24 bg-slate-100 dark:bg-slate-950 transition-colors">
                     <div className="container mx-auto px-6">
                         <div className="text-center max-w-2xl mx-auto mb-16"><h2 className="text-sky-600 dark:text-sky-500 font-bold tracking-wider uppercase mb-2">Fale Conosco</h2><h3 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Contato e Localização</h3></div>
-                        <div className="grid lg:grid-cols-2 gap-12">
-                            <div className="flex flex-col h-full gap-6">
+                        <div className="flex flex-col items-center gap-12 lg:grid lg:grid-cols-2 lg:items-start">
+                            <div className="flex flex-col h-full gap-6 w-full max-w-lg lg:max-w-none">
                                 <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm p-6 space-y-4">
                                      <div className="flex items-start gap-4"><div className="p-3 bg-sky-100 dark:bg-slate-800 rounded-lg text-sky-600 dark:text-sky-500 shrink-0"><Icon name="MapPin" size={24} /></div><div><h4 className="font-bold text-slate-900 dark:text-white text-lg">Visite nossa Loja</h4><p className="text-slate-600 dark:text-slate-400 mt-1">{APP_DATA.contact.address}</p></div></div>
                                     <div className="w-full h-px bg-slate-100 dark:bg-slate-800"></div>
@@ -1126,12 +1128,12 @@
                                      <a href={APP_DATA.contact.social.instagram} target="_blank" className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white rounded-xl font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-1"><Icon name="Instagram" size={20} /> <span className="text-sm md:text-base">Instagram</span></a>
                                 </div>
                             </div>
-                            <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl h-fit">
+                            <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl h-fit w-full max-w-lg lg:max-w-none">
                                 <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Envie uma mensagem</h4>
                                 <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                                     <div className="space-y-2"><label className="text-sm font-medium text-slate-700 dark:text-slate-300">Nome <span className="text-red-500">*</span></label><input type="text" name="from_name" required className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg focus:outline-none focus:border-sky-500 text-slate-900 dark:text-white transition-colors" placeholder="Seu nome" /></div>
                                     <div className="grid md:grid-cols-2 gap-6"><div className="space-y-2"><label className="text-sm font-medium text-slate-700 dark:text-slate-300">Telefone <span className="text-red-500">*</span></label><input type="tel" name="phone" required className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg focus:outline-none focus:border-sky-500 text-slate-900 dark:text-white transition-colors" placeholder="(49) 99999-9999" /></div><div className="space-y-2"><label className="text-sm font-medium text-slate-700 dark:text-slate-300">Email <span className="text-red-500">*</span></label><input type="email" name="reply_to" required className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg focus:outline-none focus:border-sky-500 text-slate-900 dark:text-white transition-colors" placeholder="seu@email.com" /></div></div>
-                                    <div className="space-y-2"><label className="text-sm font-medium text-slate-700 dark:text-slate-300">Mensagem</label><textarea name="message" required rows="4" className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg focus:outline-none focus:border-sky-500 text-slate-900 dark:text-white transition-colors" placeholder="Olá..."></textarea></div>
+                                    <div className="space-y-2"><label className="text-sm font-medium text-slate-700 dark:text-slate-300">Mensagem</label><textarea name="message" required rows="4" className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg focus:outline-none focus:border-sky-500 text-slate-900 dark:text-white transition-colors" placeholder="Olá, gostaria de saber mais sobre..."></textarea></div>
                                     <div className="flex justify-center sm:justify-start overflow-hidden"><div ref={recaptchaRef}></div></div>
                                     <button type="submit" disabled={formStatus !== 'idle' && formStatus !== 'error'} className={`w-full py-4 rounded-lg font-bold flex items-center justify-center gap-2 transition-all text-white shadow-lg ${formStatus === 'success' ? 'bg-green-600' : 'bg-sky-600 hover:bg-sky-700'}`}>{formStatus === 'loading' ? '...' : (formStatus === 'success' ? 'Enviado!' : 'Enviar')}</button>
                                 </form>
