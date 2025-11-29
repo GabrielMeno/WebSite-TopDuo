@@ -577,17 +577,17 @@
                             <div className="inline-block px-4 py-1.5 rounded-full bg-sky-100 dark:bg-slate-800 text-sky-700 dark:text-sky-400 text-sm font-bold uppercase tracking-wider mb-6">Quem Somos</div>
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">Mais que Tecnologia, <br/><span className="text-sky-600 dark:text-sky-500">Parceria de Verdade.</span></h2>
                             <p className="text-slate-600 dark:text-slate-400 mb-12 leading-relaxed text-lg max-w-2xl mx-auto">A Top Duo Informática não é apenas uma loja de informática. Somos um <strong>centro</strong> de soluções tecnológicas consolidado em Quilombo-SC, dedicados a simplificar a gestão do seu negócio e proteger o que é importante para você.</p>
-                            <div className="grid md:grid-cols-2 gap-6 text-left">
+                            <div className="flex flex-wrap justify-center gap-6 text-left">
                                 {[
                                     { text: "Revenda Autorizada Zucchetti", icon: "Check" },
                                     { text: "Profissionais Técnicos Especializados", icon: "Wrench" },
                                     { text: "Atendimento Ágil e Transparente", icon: "Clock" },
                                     { text: "Soluções Completas em TI e Segurança", icon: "ShieldCheck" },
-                                    { text: "Produtos de Qualidade", icon: "Star", className: "md:col-span-2 md:w-3/4 md:mx-auto" }
+                                    { text: "Produtos de Qualidade", icon: "Star" }
                                 ].map((item, i) => (
-                                    <div key={i} className={`flex items-center gap-4 p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-sky-500/30 transition-all group cursor-default ${item.className || ''}`}>
+                                    <div key={i} className="flex items-center gap-4 p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-sky-500/30 transition-all group cursor-default w-full md:w-[calc(50%-0.75rem)]">
                                         <div className="w-12 h-12 rounded-full bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center text-sky-600 dark:text-sky-400 group-hover:bg-sky-600 group-hover:text-white transition-colors shrink-0">
-                                            <Icon name={item.icon === 'Clock' ? 'Clock' : item.icon} size={24} />
+                                            <Icon name={item.icon} size={24} />
                                         </div>
                                         <span className="font-semibold text-lg text-slate-700 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">{item.text}</span>
                                     </div>
