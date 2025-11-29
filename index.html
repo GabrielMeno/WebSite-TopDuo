@@ -207,7 +207,7 @@
                 { url: 'https://i.ibb.co/Y7Tj4Q59/02.png', link: 'https://www.instagram.com/topduoinformatica/' },
                 { url: 'https://i.ibb.co/bgS2C98P/03.png', link: 'https://www.instagram.com/topduoinformatica/' }
             ],
-            partners: ["Zucchetti", "Intel", "HP", "EPSON", "AMD", "LG", "Gigabyte", "Kingston", "Acronis", "Microsoft", "Fortrek", "Kaspersky", "PMCell", "Acer", "Samsung", "BlueCase", "MSI"]
+            partners: ["Zucchetti", "Intel", "HP", "EPSON", "AMD", "LG", "Gigabyte", "Kingston", "Acronis", "Microsoft", "Fortrek", "Kaspersky", "PMCELL", "Acer", "Samsung", "BlueCase", "MSI", "NHS"]
         };
 
         const SYSTEMS_DATA = {
@@ -660,17 +660,23 @@
                                 {/* ALTERAÇÃO AQUI: Adicionado lg: antes de sticky e top-24 para ativar apenas em desktop */}
                                 <div className="lg:w-3/12 space-y-8 lg:sticky lg:top-24 w-full flex flex-col self-start lg:-mt-10 relative"> 
                                     <div className="bg-slate-50 dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
-                                        <div className="mb-8 flex flex-col items-center justify-center gap-4">
+                                        <div className="mb-8 flex flex-col items-center justify-center gap-4 relative">
+                                            {/* Efeito de brilho atrás da logo com a cor do tema */}
+                                            <div className={`absolute top-4 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full blur-[60px] opacity-40 ${styles.dot}`}></div>
+                                            
                                             <img 
                                                 src={currentData.logo} 
                                                 alt={currentData.title} 
-                                                className="w-32 h-32 rounded-lg shadow-lg object-contain border-4 border-white dark:border-slate-700 bg-white p-2" 
+                                                className="w-48 h-48 rounded-2xl shadow-2xl object-contain border-[6px] border-white dark:border-slate-700 bg-white p-4 transition-transform duration-500 hover:scale-110 z-10 relative" 
                                             />
-                                            <img 
-                                                src="https://i.ibb.co/ZpqqYHbG/C-pia-de-Zuc-Orizz-A-1000px-1.png" 
-                                                alt="Zucchetti" 
-                                                className="h-6 w-auto opacity-60 hover:opacity-100 transition-all dark:brightness-0 dark:invert" 
-                                            />
+                                            
+                                            <div className="bg-white/80 dark:bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm border border-slate-200/50 dark:border-white/10 shadow-sm mt-2 z-10">
+                                                <img 
+                                                    src="https://i.ibb.co/ZpqqYHbG/C-pia-de-Zuc-Orizz-A-1000px-1.png" 
+                                                    alt="Zucchetti" 
+                                                    className="h-8 w-auto object-contain transition-all dark:brightness-0 dark:invert hover:scale-105 duration-300" 
+                                                />
+                                            </div>
                                         </div>
                                         
                                         <div className="flex flex-col gap-2">
@@ -1094,39 +1100,49 @@
                             </RevealOnScroll>
 
                             {/* SEFAZ */}
-                            <a href="https://www.nfe.fazenda.gov.br/portal/disponibilidade.aspx" target="_blank" className="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md flex flex-col items-center justify-center text-center min-h-[260px] hover:border-red-400 transition-all group">
-                                <div className="text-red-500 mb-4 group-hover:scale-110 transition-transform p-4 bg-red-50 dark:bg-red-900/20 rounded-full"><Icon name="Server" size={32} /></div>
-                                <h4 className="text-lg font-bold text-slate-700 dark:text-slate-300 mb-2">Status SEFAZ</h4>
-                                <span className="text-sm text-slate-400 group-hover:text-red-500 flex items-center gap-2 mt-2 font-medium">Acessar Portal <Icon name="ExternalLink" size={14} /></span>
-                            </a>
+                            <RevealOnScroll>
+                                <a href="https://www.nfe.fazenda.gov.br/portal/disponibilidade.aspx" target="_blank" className="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md flex flex-col items-center justify-center text-center min-h-[260px] h-full block hover:border-red-400 transition-all group">
+                                    <div className="text-red-500 mb-4 group-hover:scale-110 transition-transform p-4 bg-red-50 dark:bg-red-900/20 rounded-full"><Icon name="Server" size={32} /></div>
+                                    <h4 className="text-lg font-bold text-slate-700 dark:text-slate-300 mb-2">Status SEFAZ</h4>
+                                    <span className="text-sm text-slate-400 group-hover:text-red-500 flex items-center gap-2 mt-2 font-medium">Acessar Portal <Icon name="ExternalLink" size={14} /></span>
+                                </a>
+                            </RevealOnScroll>
 
                             {/* NFC-E STATUS */}
-                            <a href="https://monitor.tecnospeed.com.br/?&filter-uf=sc&filter-doc=nfce" target="_blank" className="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md flex flex-col items-center justify-center text-center min-h-[260px] hover:border-emerald-400 transition-all group">
-                                <div className="text-emerald-500 mb-4 group-hover:scale-110 transition-transform p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-full"><Icon name="FileText" size={32} /></div>
-                                <h4 className="text-lg font-bold text-slate-700 dark:text-slate-300 mb-2">Status NFC-e</h4>
-                                <span className="text-sm text-slate-400 group-hover:text-emerald-500 flex items-center gap-2 mt-2 font-medium">Verificar Disponibilidade <Icon name="ExternalLink" size={14} /></span>
-                            </a>
+                            <RevealOnScroll>
+                                <a href="https://monitor.tecnospeed.com.br/?&filter-uf=sc&filter-doc=nfce" target="_blank" className="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md flex flex-col items-center justify-center text-center min-h-[260px] h-full block hover:border-emerald-400 transition-all group">
+                                    <div className="text-emerald-500 mb-4 group-hover:scale-110 transition-transform p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-full"><Icon name="FileText" size={32} /></div>
+                                    <h4 className="text-lg font-bold text-slate-700 dark:text-slate-300 mb-2">Status NFC-e</h4>
+                                    <span className="text-sm text-slate-400 group-hover:text-emerald-500 flex items-center gap-2 mt-2 font-medium">Verificar Disponibilidade <Icon name="ExternalLink" size={14} /></span>
+                                </a>
+                            </RevealOnScroll>
 
                             {/* SINTEGRA */}
-                            <a href="http://www.sintegra.gov.br" target="_blank" className="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md flex flex-col items-center justify-center text-center min-h-[260px] hover:border-indigo-400 transition-all group">
-                                <div className="text-indigo-500 mb-4 group-hover:scale-110 transition-transform p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-full"><Icon name="Globe" size={32} /></div>
-                                <h4 className="text-lg font-bold text-slate-700 dark:text-slate-300 mb-2">SINTEGRA</h4>
-                                <span className="text-sm text-slate-400 group-hover:text-indigo-500 flex items-center gap-2 mt-2 font-medium">Consulta Pública <Icon name="ExternalLink" size={14} /></span>
-                            </a>
+                            <RevealOnScroll>
+                                <a href="http://www.sintegra.gov.br" target="_blank" className="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md flex flex-col items-center justify-center text-center min-h-[260px] h-full block hover:border-indigo-400 transition-all group">
+                                    <div className="text-indigo-500 mb-4 group-hover:scale-110 transition-transform p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-full"><Icon name="Globe" size={32} /></div>
+                                    <h4 className="text-lg font-bold text-slate-700 dark:text-slate-300 mb-2">SINTEGRA</h4>
+                                    <span className="text-sm text-slate-400 group-hover:text-indigo-500 flex items-center gap-2 mt-2 font-medium">Consulta Pública <Icon name="ExternalLink" size={14} /></span>
+                                </a>
+                            </RevealOnScroll>
 
                             {/* CONSULTA NF-E */}
-                            <a href="https://www.nfe.fazenda.gov.br/portal/consultaRecaptcha.aspx?tipoConsulta=resumo&tipoConteudo=7PhJ+gAVw2g=" target="_blank" className="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md flex flex-col items-center justify-center text-center min-h-[260px] hover:border-cyan-400 transition-all group lg:col-start-2">
-                                <div className="text-cyan-500 mb-4 group-hover:scale-110 transition-transform p-4 bg-cyan-50 dark:bg-cyan-900/20 rounded-full"><Icon name="File" size={32} /></div>
-                                <h4 className="text-lg font-bold text-slate-700 dark:text-slate-300 mb-2">Consultar NF-e</h4>
-                                <span className="text-sm text-slate-400 group-hover:text-cyan-500 flex items-center gap-2 mt-2 font-medium">Portal Nacional <Icon name="ExternalLink" size={14} /></span>
-                            </a>
+                            <RevealOnScroll className="lg:col-start-2">
+                                <a href="https://www.nfe.fazenda.gov.br/portal/consultaRecaptcha.aspx?tipoConsulta=resumo&tipoConteudo=7PhJ+gAVw2g=" target="_blank" className="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md flex flex-col items-center justify-center text-center min-h-[260px] h-full block hover:border-cyan-400 transition-all group">
+                                    <div className="text-cyan-500 mb-4 group-hover:scale-110 transition-transform p-4 bg-cyan-50 dark:bg-cyan-900/20 rounded-full"><Icon name="File" size={32} /></div>
+                                    <h4 className="text-lg font-bold text-slate-700 dark:text-slate-300 mb-2">Consultar NF-e</h4>
+                                    <span className="text-sm text-slate-400 group-hover:text-cyan-500 flex items-center gap-2 mt-2 font-medium">Portal Nacional <Icon name="ExternalLink" size={14} /></span>
+                                </a>
+                            </RevealOnScroll>
 
                             {/* CONSULTA NFC-E SC */}
-                            <a href="https://sat.sef.sc.gov.br/tax.NET/Sat.Dfe.NFCe.Web/Consultas/ConsultaPublicaNFCe.aspx" target="_blank" className="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md flex flex-col items-center justify-center text-center min-h-[260px] hover:border-lime-400 transition-all group">
-                                <div className="text-lime-500 mb-4 group-hover:scale-110 transition-transform p-4 bg-lime-50 dark:bg-lime-900/20 rounded-full"><Icon name="FileText" size={32} /></div>
-                                <h4 className="text-lg font-bold text-slate-700 dark:text-slate-300 mb-2">Consultar NFC-e (SC)</h4>
-                                <span className="text-sm text-slate-400 group-hover:text-lime-500 flex items-center gap-2 mt-2 font-medium">Acesso via SAT <Icon name="ExternalLink" size={14} /></span>
-                            </a>
+                            <RevealOnScroll>
+                                <a href="https://sat.sef.sc.gov.br/tax.NET/Sat.Dfe.NFCe.Web/Consultas/ConsultaPublicaNFCe.aspx" target="_blank" className="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md flex flex-col items-center justify-center text-center min-h-[260px] h-full block hover:border-lime-400 transition-all group">
+                                    <div className="text-lime-500 mb-4 group-hover:scale-110 transition-transform p-4 bg-lime-50 dark:bg-lime-900/20 rounded-full"><Icon name="FileText" size={32} /></div>
+                                    <h4 className="text-lg font-bold text-slate-700 dark:text-slate-300 mb-2">Consultar NFC-e (SC)</h4>
+                                    <span className="text-sm text-slate-400 group-hover:text-lime-500 flex items-center gap-2 mt-2 font-medium">Acesso via SAT <Icon name="ExternalLink" size={14} /></span>
+                                </a>
+                            </RevealOnScroll>
 
                         </div>
                     </div>
