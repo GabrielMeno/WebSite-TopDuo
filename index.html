@@ -207,7 +207,7 @@
                 { url: 'https://i.ibb.co/Y7Tj4Q59/02.png', link: 'https://www.instagram.com/topduoinformatica/' },
                 { url: 'https://i.ibb.co/bgS2C98P/03.png', link: 'https://www.instagram.com/topduoinformatica/' }
             ],
-            partners: ["Zucchetti", "Intel", "HP", "EPSON", "AMD", "LG", "Gigabyte", "Kingston", "Acronis", "Microsoft", "Fortrek", "Kaspersky"]
+            partners: ["Zucchetti", "Intel", "HP", "EPSON", "AMD", "LG", "Gigabyte", "Kingston", "Acronis", "Microsoft", "Fortrek", "Kaspersky", "PMCell", "Acer", "Samsung", "BlueCase", "MSI"]
         };
 
         const SYSTEMS_DATA = {
@@ -556,7 +556,14 @@
                 <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0284c7 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="text-center mb-12"><span className="text-sky-600 dark:text-sky-500 font-bold tracking-wider uppercase text-xs md:text-sm bg-sky-100 dark:bg-sky-900/30 px-3 py-1 rounded-full">Confiança e Qualidade</span><h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mt-4">Parceiros e Tecnologias Oficiais</h3></div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">{APP_DATA.partners.map((partner, index) => (<div key={index} className="group relative flex items-center justify-center h-20 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-sky-500/50 hover:shadow-[0_0_20px_rgba(2,132,199,0.15)] transition-all duration-300 cursor-default overflow-hidden"><div className="absolute inset-0 bg-gradient-to-br from-sky-500/0 to-sky-500/0 group-hover:from-sky-500/5 group-hover:to-cyan-500/5 transition-all duration-300"></div><span className="relative z-10 text-slate-500 dark:text-slate-400 font-bold text-sm md:text-base group-hover:text-sky-600 dark:group-hover:text-white transition-colors text-center px-2">{partner}</span></div>))}</div>
+                    <div className="flex flex-wrap justify-center gap-4">
+                        {APP_DATA.partners.map((partner, index) => (
+                            <div key={index} className="group relative flex items-center justify-center h-20 w-[calc(50%-0.5rem)] md:w-[calc(25%-0.75rem)] lg:w-[calc(16.666%-0.85rem)] bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-sky-500/50 hover:shadow-[0_0_20px_rgba(2,132,199,0.15)] transition-all duration-300 cursor-default overflow-hidden">
+                                <div className="absolute inset-0 bg-gradient-to-br from-sky-500/0 to-sky-500/0 group-hover:from-sky-500/5 group-hover:to-cyan-500/5 transition-all duration-300"></div>
+                                <span className="relative z-10 text-slate-500 dark:text-slate-400 font-bold text-sm md:text-base group-hover:text-sky-600 dark:group-hover:text-white transition-colors text-center px-2">{partner}</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
         );
@@ -1114,7 +1121,6 @@
             );
         };
 
-        // --- GALLERY SECTION (RE-ADDED) ---
         const Gallery = () => (
             <section className="py-24 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 overflow-hidden">
                 <div className="container mx-auto px-6">
