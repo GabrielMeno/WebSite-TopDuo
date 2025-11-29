@@ -1220,14 +1220,42 @@
             );
         };
 
+        // --- LOADING SCREEN COMPONENT ---
+        const LoadingScreen = () => (
+            <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-900 transition-colors duration-500">
+                <div className="mb-6">
+                    <div className="w-16 h-16 border-4 border-slate-200 dark:border-slate-800 border-t-sky-500 rounded-full animate-spin"></div>
+                </div>
+                <p className="text-lg font-bold text-sky-500 uppercase tracking-widest animate-pulse">Carregando</p>
+            </div>
+        );
+
         const App = () => {
             const [theme, setTheme] = useState('dark');
             const [cmdOpen, setCmdOpen] = useState(false);
-            useEffect(() => { document.documentElement.className = theme; }, [theme]);
+            const [isLoading, setIsLoading] = useState(true);
+
+            useEffect(() => { 
+                document.documentElement.className = theme; 
+            }, [theme]);
+
+            // Simulando carregamento inicial
+            useEffect(() => {
+                const timer = setTimeout(() => {
+                    setIsLoading(false);
+                }, 2000); // 2 segundos de loading
+                return () => clearTimeout(timer);
+            }, []);
+
             const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
+
+            if (isLoading) {
+                return <LoadingScreen />;
+            }
+
             return (
                 <ToastProvider>
-                    <div className="min-h-screen font-sans antialiased selection:bg-sky-500/30 selection:text-sky-600 dark:selection:text-sky-200">
+                    <div className="min-h-screen font-sans antialiased selection:bg-sky-500/30 selection:text-sky-600 dark:selection:text-sky-200 animate-fade-in">
                         <Navbar toggleTheme={toggleTheme} isDark={theme === 'dark'} />
                         <CommandPalette isOpen={cmdOpen} onClose={() => setCmdOpen(false)} />
                         <main><Hero /><Partners /><About /><SystemsSection /><Services /><Products /><Tools /><Gallery /><Contact /></main>
